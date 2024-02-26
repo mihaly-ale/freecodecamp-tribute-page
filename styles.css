@@ -56,13 +56,13 @@ header {
 }
 
 h1 {
-  color:rgb(24, 24, 24);
+  color: rgb(24, 24, 24);
   font-size: var(--font-lg);
 }
 
-#main {
+.main {
   width: 80vw;
-  margin: 0 auto;
+  margin: 0 auto var(--margin-xlg);
 }
 
 section:not(.picture-grid) {
@@ -73,38 +73,38 @@ section:not(.picture-grid) {
   margin-bottom: 8rem;
 }
 
-#tribute-info {
-  color:rgb(24, 24, 24);
+.subtitle {
+  color: rgb(24, 24, 24);
   margin-bottom: var(--margin-xlg);
   text-align: center;
   font-weight: 500;
-  position: relative;  
+  position: relative;
 }
 
-#tribute-info::after{
- content:'';
- display: block;
- width: 30vw;
- height:1px;
- background-color: rgb(24, 24, 24);
- position: absolute;
- bottom: -20px;
- left:0;
- right:0;
- margin: auto;
+.subtitle::after {
+  content: '';
+  display: block;
+  width: 30vw;
+  height: 1px;
+  background-color: rgb(24, 24, 24);
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
-#main p {
+.main p {
   margin-bottom: var(--margin-md);
 }
 
 /* hero image container */
-#img-div {
+.hero-image-container {
   width: 65%;
   margin-inline: auto;
 }
 
-#image {
+.hero-image {
   max-width: 100%;
   display: block;
   margin: auto;
@@ -121,29 +121,33 @@ figcaption {
   text-align: center;
 }
 
-h2 {
+h3 {
   font-size: var(--font-md);
   margin-bottom: var(--margin-small);
   color: rgb(24, 24, 24);
 }
 
-#main a {
+q {
+  quotes: none;
+}
+
+.main a {
   text-decoration: none;
   color: rgb(243, 7, 243);
 }
 
-#main a:hover {
+.main a:hover {
   color: #f307f359;
 }
 
-#main a:focus {
+.main a:focus {
   opacity: 0.5;
   outline: 2px solid currentColor;
   outline-offset: 0.5px;
   border-radius: 2px;
 }
 
-#main a:visited {
+.main a:visited {
   color: rgb(100, 7, 243);
 }
 
@@ -157,7 +161,11 @@ aside {
   padding: var(--pad-small);
 }
 
-.top-aside-elm {
+.top-aside-cont {
+  margin-bottom: var(--margin-md);
+}
+
+.top-aside {
   background-image: linear-gradient(
     115deg,
     rgba(135, 101, 101, 0.15),
@@ -175,6 +183,11 @@ aside {
   justify-content: space-between;
 }
 
+.molecule-model {
+  width: 100%;
+  max-width: 480px;
+}
+
 /* gap for bottom-aside on small screen */
 blockquote + figcaption {
   margin-bottom: var(--margin-lg);
@@ -190,19 +203,19 @@ blockquote + figcaption {
     grid-template-rows: 1fr 1fr;
   }
 
-  .top-aside-elm {
+  .top-aside {
     grid-column: 3 / 4;
     grid-row: -3 / -1;
     justify-self: end;
   }
 
-  .top-aside-cont .p-before {
+  .top-aside_p-before {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     margin-bottom: 0;
   }
 
-  .top-aside-cont .p-after {
+  .top-aside_p-after {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
   }
@@ -219,7 +232,7 @@ blockquote + figcaption {
     align-items: center;
   }
 
-  .bottom-aside-elm {
+  .bottom-aside-img {
     grid-column: 1 / 3;
   }
 
@@ -348,8 +361,8 @@ footer {
   width: 100%;
 }
 
-footer > h3 {
-  padding-top: var(--pad-small);
+footer > h4 {
+  padding-top: var(--pad-md);
   text-align: center;
   font-size: var(--font-xsmall);
   font-weight: 500;
@@ -419,22 +432,6 @@ footer > h3 {
 }
 
 .logo {
-  width: 25px;
+  width: 32px;
+  height: auto;
 }
-
-/* ===== E   N   D ===== */
-
-/* to review
-background-image
-grid setup 
-howto format text in paragraphs 
-media query common breakpoints
-howto do modals
-
-moral of the story:
-                    *css variables to specify extensivly (color, font, ff, gap for margin and padding)             
-
-
-                    What went well: mobile-first and media queries
- :hover and :focus is diferrentiated now vs form project
- */
